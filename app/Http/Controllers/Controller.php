@@ -19,7 +19,7 @@ class Controller extends BaseController
     {
         $user = Auth::user();
         $partij = Toernooipartij::where([['wit', '=', $user->name], ['uitslag', '=', NULL]])->orWhere([['zwart', '=', $user->name], ['uitslag', '=', NULL]])->first();
-        $users = Toernooistand::select('name')->where('verloren', '<', 2)->get();
+        $users = Toernooistand::select('user_id')->where('verloren', '<', 2)->get();
         return view('dashboard')->with('partij', $partij)->with('deelnemers', $users);
     }
 

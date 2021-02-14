@@ -9,9 +9,15 @@ class Toernooistand extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
+        'user_id',
         'verloren',
     ];
 
     protected $table = 'toernooistand';
+
+    public function user()
+    {
+        return $this->hasOne('App\Models\User', 'id', 'user_id');
+    }
+
 }

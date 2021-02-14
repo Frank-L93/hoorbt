@@ -50,7 +50,7 @@ class RegisteredUserController extends Controller
         ]));
         $user->assignRole('Toernooispeler');
         Toernooistand::create([
-            'name' => $request->name,
+            'user_id' => $user->id,
             'verloren' => 0,
         ]);
         event(new Registered($user));

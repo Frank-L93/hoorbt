@@ -15,7 +15,7 @@ class CreateToernooistandTable extends Migration
     {
         Schema::create('toernooistand', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->integer('user_id');
             $table->string('verloren')->nullable();
             $table->timestamps();
         });

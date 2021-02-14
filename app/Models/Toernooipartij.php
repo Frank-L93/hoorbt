@@ -15,4 +15,5 @@ class Toernooipartij extends Model
         'links',
     ];
     protected $table = 'toernooipartijen';
+
 }

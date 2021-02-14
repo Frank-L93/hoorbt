@@ -14,7 +14,7 @@ class AdminController extends Controller
         $users = User::all();
         $users_to_pair = Array();
         foreach($users as $user){
-            $user_in_toernooistand = Toernooistand::where('name', $user->name)->first();
+            $user_in_toernooistand = Toernooistand::where('user_id', $user->id)->first();
             if(!is_null($user_in_toernooistand))
             {
                 if($user_in_toernooistand->verloren == 2)
@@ -23,12 +23,12 @@ class AdminController extends Controller
                 }
                 else
                 {
-                    array_push($users_to_pair, $user_in_toernooistand->name);
+                    array_push($users_to_pair, $user->name);
                 }
             }
             else{
                 Toernooistand::create([
-                    'name' => $user->name,
+                    'user_id' => $user->id,
                     'verloren' => 0,
                 ]);
                 array_push($users_to_pair, $user->name);

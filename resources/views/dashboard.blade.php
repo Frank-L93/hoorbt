@@ -78,7 +78,7 @@ Je bent ingelogd. Hier kun je gegevens zien en uitslagen doorgeven. Doe je mee m
                     <div class="p-6 bg-white border-b border-gray-200">
                         <b>Deelnemers nog in het toernooi</b><hr>
                         @foreach($deelnemers as $deelnemer)
-                            {{$deelnemer->name}}<hr>
+                            {{$deelnemer->user->name}}<hr>
                         @endforeach
                     </div>
                 </div>

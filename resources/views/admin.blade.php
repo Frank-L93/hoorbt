@@ -42,7 +42,7 @@
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200">
                             @foreach($toernooistanden as $toernooistand)
-                                {{$toernooistand->name}} | {{$toernooistand->verloren}} <br>
+                                {{$toernooistand->user->name}} | {{$toernooistand->verloren}} | {{$toernooistand->user->rating}}<br>
                                 @endforeach
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                             @foreach($toernooipartijen as $toernooipartij)
                                 Partij: {{$toernooipartij->wit}} - {{$toernooipartij->zwart}} <br>
                                 Links: {{$toernooipartij->links}}<br>
-                                Uitslag: {{$toernooipartij->uitslag}}<hr>
+                                Uitslag: @if($toernooipartij->uitslag == 1) {{$toernooipartij->wit}} heeft gewonnen.@else {{$toernooipartij->zwart}} heeft gewonnen.@endif<hr>
                             @endforeach
                         </div>
                     </div>
