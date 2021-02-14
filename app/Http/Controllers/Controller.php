@@ -18,7 +18,6 @@ class Controller extends BaseController
     public function index()
     {
         $user = Auth::user();
-        $user->assignRole('super-admin');
         $partij = Toernooipartij::where([['wit', '=', $user->name], ['uitslag', '=', NULL]])->orWhere([['zwart', '=', $user->name], ['uitslag', '=', NULL]])->first();
         $users = Toernooistand::select('name')->where('verloren', '<', 2)->get();
         return view('dashboard')->with('partij', $partij)->with('deelnemers', $users);
