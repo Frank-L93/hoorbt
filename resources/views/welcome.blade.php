@@ -23,7 +23,7 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
             @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <div class="fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
                     @else
@@ -69,7 +69,7 @@
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                                     De indeling wordt iedere maandagavond gepubliceerd. Login op het dashboard om jouw partij te zien en de gegevens van je tegenstander als mede de deelnemers die nog in het toernooi zijn.
-                                    Je contactgegevens zijn alleen zichtbaar voor je huidige tegenstander, totdat de partij is gespeeld en de uitslag is doorgegeven.
+                                    Je contactgegevens zijn alleen zichtbaar voor je huidige tegenstander, totdat de partij is gespeeld en de uitslag is doorgegeven.<br>De eerste indeling wordt gemaakt op 1 maart! Meld je dus tijdig aan.
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
 
                         <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
                             <div class="flex items-center">
-                                       <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Aanmelden</div>
+                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white"><a href="{{ route('register') }}" class="underline">Aanmelden</a></div>
                             </div>
 
                             <div class="ml-12">

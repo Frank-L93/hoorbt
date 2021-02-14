@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Toernooistand;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -48,6 +49,10 @@ class RegisteredUserController extends Controller
             'chesscom' => $request->chesscom,
         ]));
         $user->assignRole('Toernooispeler');
+        Toernooistand::create([
+            'name' => $request->name,
+            'verloren' => 0,
+        ]);
         event(new Registered($user));
 
         return redirect(RouteServiceProvider::HOME);
