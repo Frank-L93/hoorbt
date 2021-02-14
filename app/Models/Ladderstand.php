@@ -16,5 +16,5 @@ class Ladderstand extends Model
         'score',
         'tpr',
     ];
-    protected $table = 'Ladderstand';
+    protected $table = 'ladderstand';
 }

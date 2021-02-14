@@ -13,5 +13,5 @@ class Toernooistand extends Model
         'verloren',
     ];
 
-    protected $table = 'Toernooistand';
+    protected $table = 'toernooistand';
 }

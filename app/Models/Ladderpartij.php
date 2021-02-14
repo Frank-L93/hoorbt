@@ -13,5 +13,5 @@ class Ladderpartij extends Model
         'zwart',
         'uitslag',
     ];
-    protected $table = 'Ladderpartijen';
+    protected $table = 'ladderpartijen';
 }
