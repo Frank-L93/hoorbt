@@ -8,12 +8,16 @@
                     <a href="{{ route('dashboard') }}">
                         Het Open Online Roosendaals Bekertoernooi
                     </a>
+
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('historie')" :active="request()->routeIs('historie')">
+                        {{ __('Historie') }}
                     </x-nav-link>
                     @can('toevoegen ladderpartij')
                         <x-nav-link :href="route('ladder')" :active="request()->routeIs('ladder')">

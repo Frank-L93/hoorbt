@@ -23,7 +23,7 @@ class AdminController extends Controller
                 }
                 else
                 {
-                    array_push($users_to_pair, $user->name);
+                    array_push($users_to_pair, $user);
                 }
             }
             else{
@@ -31,7 +31,7 @@ class AdminController extends Controller
                     'user_id' => $user->id,
                     'verloren' => 0,
                 ]);
-                array_push($users_to_pair, $user->name);
+                array_push($users_to_pair, $user);
             }
         }
         $toernooistand = Toernooistand::all();
@@ -40,11 +40,31 @@ class AdminController extends Controller
     }
 
     public function store(Request $request){
-
+    if($request->zwart == "Bye")
+    {
+        $toernooipartij = Toernooipartij::create([
+            'wit' => $request->wit,
+            'zwart' => $request->zwart,
+            'uitslag' => 1,
+        ]);
+    }
+    elseif($request->zwart == "Afwezig")
+    {
+        $toernooipartij = Toernooipartij::create([
+            'wit' => $request->wit,
+            'zwart' => $request->zwart,
+            'uitslag' => 2,
+        ]);
+        $toernooistand_wit = Toernooistand::where('user_id', $request->wit)->first();
+        $toernooistand_wit->verloren = $toernooistand_wit->verloren + 1;
+        $toernooistand_wit->save();
+    }
+    else{
         $toernooipartij = Toernooipartij::create([
             'wit' => $request->wit,
             'zwart' => $request->zwart,
         ]);
+    }
 
         return redirect('/admin');
     }

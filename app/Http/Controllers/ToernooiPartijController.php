@@ -16,18 +16,19 @@ class ToernooiPartijController extends Controller
         $toernooipartij->links = $request->links;
         $toernooipartij->save();
 
-        $zwart = User::where('name', $toernooipartij->zwart)->first();
-        $wit = User::where('name', $toernooipartij->wit)->first();
-        if($toernooipartij->uitslag == 1){
-            $toernooistand_zwart = Toernooistand::where('user_id', $zwart)->first();
-            $toernooistand_zwart->verloren = $toernooistand_zwart->verloren+1;
-            $toernooistand_zwart->save();
-        }
-        else{
-            $toernooistand_wit = Toernooistand::where('user_id', $wit)->first();
-            $toernooistand_wit->verloren = $toernooistand_wit->verloren+1;
-            $toernooistand_wit->save();
-        }
+
+            $zwart = User::where('id', $toernooipartij->zwart)->first();
+            $wit = User::where('id', $toernooipartij->wit)->first();
+            if ($toernooipartij->uitslag == 1) {
+                $toernooistand_zwart = Toernooistand::where('user_id', $zwart->id)->first();
+                $toernooistand_zwart->verloren = $toernooistand_zwart->verloren + 1;
+                $toernooistand_zwart->save();
+            } else {
+                $toernooistand_wit = Toernooistand::where('user_id', $wit->id)->first();
+                $toernooistand_wit->verloren = $toernooistand_wit->verloren + 1;
+                $toernooistand_wit->save();
+            }
+
 
         return redirect(RouteServiceProvider::HOME);
     }

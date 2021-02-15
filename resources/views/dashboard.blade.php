@@ -12,21 +12,15 @@
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-2">
                 <div class="p-6 bg-white border-b border-gray-200">
 Je bent ingelogd. Hier kun je gegevens zien en uitslagen doorgeven. Doe je mee met een toernooi, kun je ook de gegevens van je tegenstander zien.
-
                 </div>
             </div>
             @endisset
             @can('uitslag doorgeven')
-
-
-
+                    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-2">
+                        <div class="p-6 bg-white border-b border-gray-200">
                     @isset($partij)
-                        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-2">
-                            <div class="p-6 bg-white border-b border-gray-200">
-                   @empty($partij)
-                       Je hebt geen partijen waar je een uitslag voor hoeft door te geven.
-                    @else
-                        <a href="/speler/{{$partij->wit}}" class="underline">{{$partij->wit}}</a> - <a href="/speler/{{$partij->zwart}}" class="underline">{{$partij->zwart}}</a> <br>
+
+                        <a href="/speler/{{$partij->wit}}" class="underline">{{$partijnaam_wit->name}}</a> - <a href="/speler/{{$partij->zwart}}" class="underline">{{$partijnaam_zwart->name}}</a> <br>
                         <form method="post" action="{{ route('uitslag') }}">
                             @csrf
                             <input id="id" name="id" type="hidden" value="{{$partij->id}}" />
@@ -39,8 +33,8 @@ Je bent ingelogd. Hier kun je gegevens zien en uitslagen doorgeven. Doe je mee m
                             <div>
                                 <x-label for="uitslag" :value="__('Uitslag')" />
                                 <select name="uitslag" id="uitslag" :value="old('uitslag')">
-                                    <option value="1">{{$partij->wit}} wint</option>
-                                    <option value="2">{{$partij->zwart}} wint</option>
+                                    <option value="1">{{$partijnaam_wit->name}} wint</option>
+                                    <option value="2">{{$partijnaam_zwart->name}} wint</option>
                                 </select>
                             </div>
                             <div>
@@ -49,37 +43,24 @@ Je bent ingelogd. Hier kun je gegevens zien en uitslagen doorgeven. Doe je mee m
                             </x-button>
                             </div>
                         </form>
-
-                    @endempty
-                            </div>
+                    @else
+                        Je hebt geen partijen waarvoor je de uitslag hoeft in te dienen. Bekijk je vorige partijen in de historie.
+                    @endisset
                         </div>
-                        @endisset
-                    @isset($speler)
-                            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-2">
-                                <div class="p-6 bg-white border-b border-gray-200">
-                        @if($speler === "Ongeldig")
-                            Jij mag de gegevens van deze speler niet bekijken.
-                            @else
-
-                        Je tegenstander is: {{$speler->name}}.<br>
-                        Je kunt hem bereiken via de volgende methodes:<br>
-                        E-mail: {{$speler->email}}<br>
-                        LiChess: {{$speler->lichess}}<br>
-                        Chess.com: {{$speler->chesscom}}<br>
-                  @endif
-                                </div>
-                            </div>
-
-                        @endisset
-
+                    </div>
             @endcan
                 @isset($deelnemers)
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-2">
                     <div class="p-6 bg-white border-b border-gray-200">
                         <b>Deelnemers nog in het toernooi</b><hr>
-                        @foreach($deelnemers as $deelnemer)
-                            {{$deelnemer->user->name}}<hr>
-                        @endforeach
+                        <table>
+                            <thead><tr><th>Naam</th></tr></thead>
+                            <tbody>
+                            @foreach($deelnemers as $deelnemer)
+                                <tr><td>{{$deelnemer->user->name}}</td></tr>
+                            @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                     @endisset

@@ -24,6 +24,7 @@ Route::get('/ladderpartijen', function () {
     return view('ladderpartij');
 })->middleware(['auth'])->name('ladder');
 Route::get('/dashboard', [Controller::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/historie', [Controller::class, 'historie'])->middleware(['auth'])->name('historie');
 Route::post('/ladderpartij', [LadderPartijController::class, 'store'])->middleware(['auth'])->name('ladderpartij');
 Route::post('/toernooipartij', [AdminController::class, 'store'])->middleware(['auth'])->name('toernooipartij');
 Route::post('/uitslagdoorgeven', [ToernooiPartijController::class, 'store'])->middleware(['auth'])->name('uitslag');

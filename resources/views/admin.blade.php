@@ -18,7 +18,7 @@
                                 <select name="wit" id="wit" :value="old('wit')" required>
 
                                     @foreach($users as $user)
-                                        <option value="{{$user}}">{{$user}}</option>
+                                        <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -27,8 +27,10 @@
                                 <x-label for="zwart" :value="__('Zwart')" />
                                 <select name="zwart" id="zwart" :value="old('zwart')" required>>
                                     @foreach($users as $user)
-                                        <option value="{{$user}}">{{$user}}</option>
+                                        <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
+                                    <option value="Bye">Bye(win)</option>
+                                    <option value="Afwezig">Bye(verlies)</option>
                                 </select>
                             </div>
                             <x-button class="ml-4">
@@ -37,8 +39,6 @@
                         </form>
                     </div>
                 </div>
-            @endcan
-                @can('toevoegen toernooipartij')
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200">
                             @foreach($toernooistanden as $toernooistand)
@@ -46,14 +46,12 @@
                                 @endforeach
                         </div>
                     </div>
-                    @endcan
-                @can('toevoegen toernooipartij')
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200">
                             @foreach($toernooipartijen as $toernooipartij)
-                                Partij: {{$toernooipartij->wit}} - {{$toernooipartij->zwart}} <br>
+                                Partij: {{$toernooipartij->getName($toernooipartij->wit)}} - {{$toernooipartij->getName($toernooipartij->zwart)}} <br>
                                 Links: {{$toernooipartij->links}}<br>
-                                Uitslag: @if($toernooipartij->uitslag == 1) {{$toernooipartij->wit}} heeft gewonnen.@else {{$toernooipartij->zwart}} heeft gewonnen.@endif<hr>
+                                Uitslag: @if($toernooipartij->uitslag == 1) {{$toernooipartij->getName($toernooipartij->wit)}} heeft gewonnen.@elseif($toernooipartij->uitslag == 2) {{$toernooipartij->getName($toernooipartij->zwart)}} heeft gewonnen.@else Nog niet gespeeld.@endif<hr>
                             @endforeach
                         </div>
                     </div>
