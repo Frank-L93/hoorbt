@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ToernooiPartijController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LadderPartijController;
 use App\Http\Controllers\AdminController;
@@ -18,7 +19,8 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $count = User::count();
+    return view('welcome')->with('count', $count);
 });
 Route::get('/ladderpartijen', function () {
     return view('ladderpartij');

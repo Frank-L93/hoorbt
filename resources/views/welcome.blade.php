@@ -95,7 +95,8 @@
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Aanmelden kan door een account aan te maken, geef hierbij je naam op, een e-mailadres en je rating (dat is alvast voor een nieuw toernooi). Je kunt ook je LiChess-gebruikersnaam of Chess.com-gebruikersnaam opgeven. Gebruik bij het aanmelden absoluut niet hetzelfde wachtwoord als een van die accounts. Je weet maar nooit...
+                                Aanmelden kan door een account aan te maken, geef hierbij je naam op, een e-mailadres en je rating (dat is alvast voor een nieuw toernooi). Je kunt ook je LiChess-gebruikersnaam of Chess.com-gebruikersnaam opgeven. Gebruik bij het aanmelden absoluut niet hetzelfde wachtwoord als een van die accounts. Je weet maar nooit...<br>
+                                    <b>Aanmeldingen tot nu toe: </b>{{$count}}
                                 </div>
                             </div>
                         </div>
