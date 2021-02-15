@@ -28,7 +28,7 @@
                 <div class="mt-4">
                     <x-label for="rating" :value="__('Rating')" />
 
-                    <x-input id="rating" class="block mt-1 w-full" type="number" name="rating" :value="old('rating')" required />
+                    <x-input id="rating" class="block mt-1 w-full" type="number" name="rating" :value="old('rating')"/>
                 </div>
 
                 <!-- Sites -->
