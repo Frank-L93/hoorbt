@@ -67,4 +67,8 @@ class Controller extends BaseController
         $partij = Toernooipartij::where('wit', '=', $wit)->orWhere('zwart', '=', $zwart)->get();
         return view('historie')->with('partij', $partij);
     }
+
+    public function uitleg(){
+        return view('uitleg');
+    }
 }

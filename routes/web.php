@@ -20,13 +20,15 @@ use App\Http\Controllers\Controller;
 
 Route::get('/', function () {
     $count = User::count();
-    return view('welcome')->with('count', $count);
+    $games = \App\Models\Toernooipartij::where('uitslag', '=', NULL)->get();
+    return view('welcome')->with('count', $count)->with('games', $games);
 });
 Route::get('/ladderpartijen', function () {
     return view('ladderpartij');
 })->middleware(['auth'])->name('ladder');
 Route::get('/dashboard', [Controller::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/historie', [Controller::class, 'historie'])->middleware(['auth'])->name('historie');
+Route::get('/uitleg', [Controller::class, 'uitleg'])->middleware(['auth'])->name('uitleg');
 Route::post('/ladderpartij', [LadderPartijController::class, 'store'])->middleware(['auth'])->name('ladderpartij');
 Route::post('/toernooipartij', [AdminController::class, 'store'])->middleware(['auth'])->name('toernooipartij');
 Route::post('/uitslagdoorgeven', [ToernooiPartijController::class, 'store'])->middleware(['auth'])->name('uitslag');

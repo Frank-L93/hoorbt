@@ -19,6 +19,9 @@
                     <x-nav-link :href="route('historie')" :active="request()->routeIs('historie')">
                         {{ __('Historie') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('uitleg')" :active="request()->routeIs('uitleg')">
+                        {{ __('Uitleg LiChess / Chess.com') }}
+                    </x-nav-link>
                     @can('toevoegen ladderpartij')
                         <x-nav-link :href="route('ladder')" :active="request()->routeIs('ladder')">
                             {{ __('Ladderpartijen') }}

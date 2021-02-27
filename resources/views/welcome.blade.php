@@ -93,6 +93,18 @@
                                 <div class="mt-2 text-gray-600 text-sm">
                                     De indeling wordt iedere maandagavond gepubliceerd. Login op het dashboard om jouw partij te zien en de gegevens van je tegenstander als mede de deelnemers die nog in het toernooi zijn.
                                     Je contactgegevens zijn alleen zichtbaar voor je huidige tegenstander, totdat de partij is gespeeld en de uitslag is doorgegeven.<br>De eerste indeling wordt gemaakt op 1 maart! Meld je dus tijdig aan.
+                                    @if(count($games) == 0)
+                                        <div class="mt-2 text-gray-600 text-sm">Geen lopende matches</div>
+                                    @else
+                                        <div class="mt-2 text-gray-600 text-sm underline">Lopende matches</div>
+
+                                        <table>
+                                            <thead><tr><th>Speler 1</th><th>Speler 2</th></tr></thead>
+                                            @foreach($games as $game)
+                                                <tr><td>{{$game->getName($game->wit)}}</td><td>{{$game->getName($game->zwart)}}</td></tr>
+                                            @endforeach
+                                        </table>
+                                    @endif
                                 </div>
                             </div>
                         </div>
