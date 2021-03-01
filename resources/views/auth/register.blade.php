@@ -1,3 +1,5 @@
+@can('toevoegen toernooipartij')
+
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -75,3 +77,6 @@
         </form>
     </x-auth-card>
 </x-guest-layout>
+@else
+Je kunt je niet meer aanmelden helaas.
+@endcan
