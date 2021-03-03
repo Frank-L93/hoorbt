@@ -28,6 +28,15 @@
                     </ul>
                     <i>Hoe daag je je tegenstander zonder Account uit op LiChess?</i>
                     Op de voorpagina kun je ook direct klikken op "Speel tegen een vriend". Als je de klok hebt ingesteld, krijg je een link die je kunt delen. Je kunt deze link eenmalig gebruiken! Sluit deze pagina dan ook niet. Zodra je tegenstander op de gedeelde link drukt, start de partij automatisch.
+                        <br>
+                            <i>Hoe deel ik mijn partij?</i>
+                            <ul class="list-decimal list-inside">
+                                <li>Iedere partij die je speelt, als je bent ingelogd, wordt opgeslagen op je profiel. Je kunt deze terugvinden onder het tabblad partijen op je profiel pagina.
+                                    <img src="/LiChess5.png"> <br>
+                                <img src="/LiChess6.png"></li>
+                                <li>Heb je de partij open in je browser, dan kun je vervolgens de url kopiëren. Die is voor iedere partij uniek.<img src="/LiChess7.png"></li>
+                                <li>Speel je als gast, dan moet je direct na dat de partij is afgelopen, de url kopiëren. Je kunt hem namelijk niet terugvinden via je profiel dan.</li>
+                            </ul>
                 </div>
                 </div>
             </div>
@@ -54,6 +63,13 @@
                                 <img src="/chess6.png">
                             </li>
                             <li>Een armageddon partij op Chess.com is lastiger. Daarvoor moet je juist 5 minuten kiezen en geduldig wachten; Geeft Chess.com aan dat je wel moet zetten? Zet dan snel. Armageddon-partijen worden aangeraden op LiChess te spelen.</li>
+                        </ul>
+                        <i>Hoe deel ik mijn partij?</i>
+                        <ul class="list-decimal list-inside">
+                            <li>Iedere partij die je speelt via "live chess" kan teruggevonden worden via je profiel. Klik daarvoor op het tabblad 'Games' op je profiel.
+                            <img src="/chess7.png"><br>
+                            <img src="/chess8.png"></li>
+                            <li>Heb je de partij open in je browser, dan kun je vervolgens de url kopiëren. Die is voor iedere partij uniek.<img src="/chess9.png"></li>
                         </ul>
                     </div>
                 </div>
