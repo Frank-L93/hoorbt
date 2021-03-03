@@ -48,7 +48,7 @@ class PasswordReset extends Notification
     {
         return (new MailMessage)
             ->line('Je ontvangt deze e-mail omdat je een wachtwoordreset hebt aangevraagd voor je account voor Het Open Online Roosendaals Bekertoernooi') // Here are the lines you can safely override
-            ->action('Reset wachtwoord', url('password/reset', $this->token))
+            ->action('Reset wachtwoord', url('reset-password', $this->token))
             ->line('Niet aangevraagd? Negeer deze e-mail dan.');
     }
 }
