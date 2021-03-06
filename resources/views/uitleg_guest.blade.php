@@ -32,7 +32,8 @@
                             <img src="/LiChess6.png"></li>
                         <li>Heb je de partij open in je browser, dan kun je vervolgens de url kopiëren. Die is voor iedere partij uniek.<img src="/LiChess7.png"></li>
                         <li>Speel je als gast, dan moet je direct na dat de partij is afgelopen, de url kopiëren. Je kunt hem namelijk niet terugvinden via je profiel dan.</li>
-                    </ul>
+                    </ul><br>
+                    <i>Zodra je de links hebt, <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">log je in op deze website en vul je de uitslag in</a>. Hoe dat werkt, wijst zich eenvoudig uit zodra je bent ingelogd. Doet je tegenstander dit, dan hoef je dat niet doen.</i>
                 </div>
             </div>
         </div>
@@ -67,6 +68,8 @@
                             <img src="/chess8.png"></li>
                         <li>Heb je de partij open in je browser, dan kun je vervolgens de url kopiëren. Die is voor iedere partij uniek.<img src="/chess9.png"></li>
                     </ul>
+                    <br>
+                    <i>Zodra je de links hebt, <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">log je in op deze website en vul je de uitslag in</a>. Hoe dat werkt, wijst zich eenvoudig uit zodra je bent ingelogd. Doet je tegenstander dit, dan hoef je dat niet doen.</i>
                 </div>
             </div>
         </div>
