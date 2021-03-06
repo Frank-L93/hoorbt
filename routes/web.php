@@ -29,6 +29,7 @@ Route::get('/ladderpartijen', function () {
 Route::get('/dashboard', [Controller::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::get('/historie', [Controller::class, 'historie'])->middleware(['auth'])->name('historie');
 Route::get('/uitleg', [Controller::class, 'uitleg'])->middleware(['auth'])->name('uitleg');
+Route::get('/uitleg/gast', [Controller::class, 'gast'])->name('uitleg2');
 Route::post('/ladderpartij', [LadderPartijController::class, 'store'])->middleware(['auth'])->name('ladderpartij');
 Route::post('/toernooipartij', [AdminController::class, 'store'])->middleware(['auth'])->name('toernooipartij');
 Route::post('/uitslagdoorgeven', [ToernooiPartijController::class, 'store'])->middleware(['auth'])->name('uitslag');

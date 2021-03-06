@@ -71,4 +71,7 @@ class Controller extends BaseController
     public function uitleg(){
         return view('uitleg');
     }
+    public function gast(){
+        return view('uitleg_guest');
+    }
 }

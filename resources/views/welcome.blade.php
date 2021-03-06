@@ -76,7 +76,8 @@
                                     Je speelt ieder week één match tegen een andere schaker. Deze match bestaat uit twee partijen van 7 minuten + 7 seconden. Is het 1-1, dan speel je een armageddon partij waarbij zwart voldoende heeft aan remise.<br>Verlies je de match? Dan heb je nog een herkansing, je speelt dus altijd tenminste twee matches in het toernooi.
                                     Je kunt dus de finale bereiken met 1 verliesmatch achter je naam. <br>Verlies je voor het eerst in de finale, dan gaat de finale over twee matches!
                                     Er wordt geadviseerd om online te spelen, maar je mag offline spelen wanneer je je houdt aan de richtlijnen van de overheid m.b.t. Corona.<br>
-                                    Je kunt de <a href="/reglement.pdf" class="underline">regels</a> hier rustig nalezen
+                                    Je kunt de <a href="/reglement.pdf" class="underline">regels</a> hier rustig nalezen<br>
+                                    Je kunt <a href="{{route('uitleg2')}}" class="underline">hier uitleg</a> vinden over LiChess en Chess.com
                                 </div>
                             </div>
                         </div>
