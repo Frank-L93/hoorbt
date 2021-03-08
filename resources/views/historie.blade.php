@@ -14,7 +14,7 @@
                             <tbody>
                         @foreach($partij as $party)
 
-                                <tr><td>{{$party->getName($party->wit)}}</td><td>{{$party->getName($party->zwart)}}</td><td>@if($party->uitslag == 1) Speler 1 heeft gewonnen @elseif($party->uitslag == 2) Speler 2 heeft gewonnen @else Er is nog geen uitslag bekend.@endif</td><td>@foreach(explode(',', $party->links) as $link)<a href="{{$link}}" class="underline">{{$link}}</a>  @endforeach</td></tr>
+                                <tr><td>{{$party->getName($party->wit)}}</td><td>{{$party->getName($party->zwart)}}</td><td>@if($party->uitslag == 1) Speler 1 heeft gewonnen @elseif($party->uitslag == 2) Speler 2 heeft gewonnen @elseif($party->uitslag == 3) Partij is niet op tijd gespeeld en beide spelers hebben een verloren partij. @else Er is nog geen uitslag bekend.@endif</td><td>@foreach(explode(',', $party->links) as $link)<a href="{{$link}}" class="underline">{{$link}}</a>  @endforeach</td></tr>
                         @endforeach</tbody>
                         </table>
                     </div>
