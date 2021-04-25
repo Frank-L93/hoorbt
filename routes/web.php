@@ -19,9 +19,8 @@ use App\Http\Controllers\Controller;
 */
 
 Route::get('/', function () {
-    $count = User::count();
-    $games = \App\Models\Toernooipartij::where('uitslag', '=', NULL)->get();
-    return view('welcome')->with('count', $count)->with('games', $games);
+
+    return view('welcome');
 });
 Route::get('/ladderpartijen', function () {
     return view('ladderpartij');

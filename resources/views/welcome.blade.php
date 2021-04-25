@@ -30,32 +30,7 @@
                     </svg>
                 </button>
             </div>
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Aanmelden</a>
-                        @endif
-                    @endauth
-                </div>
-                <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-                    <div class="fixed top-12 right-2">
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-                        @else
-                            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Aanmelden</a>
-                            @endif
-                        @endauth
-                    </div>
-                </div>
-            @endif
     </nav>
 
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
@@ -86,26 +61,14 @@
                             <div class="flex items-center">
 
                                 <div class="ml-4 text-lg leading-7 font-semibold">
-                                    Indeling
+                                   Winnaar eerste editie
                                 </div>
                             </div>
 
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 text-sm">
-                                    De indeling wordt iedere maandagavond gepubliceerd. Login op het dashboard om jouw partij te zien en de gegevens van je tegenstander als mede de deelnemers die nog in het toernooi zijn.
-                                    Je contactgegevens zijn alleen zichtbaar voor je huidige tegenstander, totdat de partij is gespeeld en de uitslag is doorgegeven.<br>De eerste indeling wordt gemaakt op 1 maart! Meld je dus tijdig aan.
-                                    @if(count($games) == 0)
-                                        <div class="mt-2 text-gray-600 text-sm">Geen lopende matches</div>
-                                    @else
-                                        <div class="mt-2 text-gray-600 text-sm underline">Lopende matches</div>
+                                Jordy Schouten heeft de eerste editie gewonnen!
 
-                                        <table>
-                                            <thead><tr><th>Speler 1</th><th>Speler 2</th></tr></thead>
-                                            @foreach($games as $game)
-                                                <tr><td>{{$game->getName($game->wit)}}</td><td>{{$game->getName($game->zwart)}}</td></tr>
-                                            @endforeach
-                                        </table>
-                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -132,7 +95,7 @@
                             <div class="ml-12">
                                 <div class="mt-2 text-gray-600 text-sm">
                                 Aanmelden kan door een account aan te maken, geef hierbij je naam op, een e-mailadres en je rating (dat is alvast voor een nieuw toernooi). Je kunt ook je LiChess-gebruikersnaam of Chess.com-gebruikersnaam opgeven. Gebruik bij het aanmelden absoluut niet hetzelfde wachtwoord als een van die accounts. Je weet maar nooit...<br>
-                                    <b>Aanmeldingen tot nu toe: </b>{{$count}}
+
                                 </div>
                             </div>
                         </div>
